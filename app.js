@@ -1,26 +1,50 @@
-// Hamburger menu toggle
-const toggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+const galleryGrid = document.getElementById('galleryGrid');
 
-toggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+fetch('galleryImages.json')
+  .then(res => res.json())
+  .then(galleryImages => {
 
-// Tribute form submission
-const tributeForm = document.getElementById("tributeForm");
-const tributeList = document.getElementById("tributeList");
+    galleryImages.forEach((src, index) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Tribute image ${index + 1}`;
+      img.dataset.index = index;
+      galleryGrid.appendChild(img);
+    });
 
-tributeForm.addEventListener("submit", function(e){
-  e.preventDefault();
+    // LIGHTBOX
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const closeBtn = document.querySelector('.lightbox .close');
+    const prevBtn = document.querySelector('.lightbox .prev');
+    const nextBtn = document.querySelector('.lightbox .next');
+    let currentIndex = 0;
 
-  const name = document.getElementById("name").value;
-  const message = document.getElementById("message").value;
+    galleryGrid.addEventListener('click', e => {
+      if (e.target.tagName === 'IMG') {
+        currentIndex = parseInt(e.target.dataset.index);
+        lightboxImg.src = galleryImages[currentIndex];
+        lightbox.classList.add('show');
+        setTimeout(() => lightboxImg.classList.add('show'), 10);
+      }
+    });
 
-  const tributeItem = document.createElement("div");
-  tributeItem.classList.add("tribute-item");
-  tributeItem.innerHTML = `<h4>${name}</h4><p>${message}</p>`;
+    closeBtn.addEventListener('click', () => {
+      lightboxImg.classList.remove('show');
+      lightbox.classList.remove('show');
+    });
 
-  tributeList.appendChild(tributeItem);
+    function changeImage(newIndex) {
+      lightboxImg.classList.remove('show');
+      setTimeout(() => {
+        currentIndex = newIndex;
+        lightboxImg.src = galleryImages[currentIndex];
+        lightboxImg.classList.add('show');
+      }, 300);
+    }
 
-  tributeForm.reset();
-});
+    prevBtn.addEventListener('click', () => changeImage((currentIndex - 1 + galleryImages.length) % galleryImages.length));
+    nextBtn.addEventListener('click', () => changeImage((currentIndex + 1) % galleryImages.length));
+
+  })
+  .catch(err => console.error("Failed to load gallery images:", err));
