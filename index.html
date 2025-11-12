@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A tribute to George Githii. Celebrate his life and leave tributes.">
+  <meta name="keywords" content="George Githii, tribute, memorial, gallery, legacy">
+  <meta name="author" content="Your Name">
   <title>George Githii | Tribute</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,7 +13,7 @@
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <h2 class="logo">In Loving Memory</h2>
+    <h1 class="logo">In Loving Memory</h1>
     <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
@@ -24,9 +26,9 @@
   <!-- HERO SECTION -->
   <section class="hero" id="hero">
     <div class="hero-container">
-      <img src="images/gallery/Dad5.jpg" alt="George Githii" class="hero-img">
+      <img src="images/gallery/dad5.jpg" alt="George Githii smiling" class="hero-img">
       <div class="hero-text">
-        <h1>George Githii</h1>
+        <h2>George Githii</h2>
         <p>"For God so loved the world he gave his only begotten son, that whosoever believes in him shall not perish, but have everlasting life."</p>
         <p><strong>John 3:16</strong></p>
       </div>
@@ -37,12 +39,9 @@
   <section id="about" class="page-section">
     <div class="section-container">
       <h2>About</h2>
-      <p>
-        A short and meaningful description about his life, values, and impact. Celebrate the legacy and inspiring journey of George Githii.  
-        <a href="https://www.msn.com/en-xl/news/other/power-press-and-the-pen-how-george-githii-shaped-kenya-s-media/ar-AA1Q4LX7?ocid=BingNewsSerp" target="_blank" rel="noopener" class="about-link">
-          Read the detailed story here
-        </a>.
-      </p>
+      <p>George Githii was a remarkable figure whose life and work inspired many. He was known for his values, dedication, and impact on the community.</p>
+      <p>Celebrate his legacy and inspiring journey, and learn more about his contributions through the link below.</p>
+      <a href="#" target="_blank" class="about-link">Read the detailed story here</a>
     </div>
   </section>
 
@@ -53,7 +52,8 @@
       <div class="gallery-grid" id="galleryGrid"></div>
     </div>
   </section>
-    <!-- LIGHTBOX -->
+
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
     <img class="lightbox-img" src="" alt="Gallery Image">
@@ -63,18 +63,28 @@
     </div>
   </div>
 
- 
-
   <!-- TRIBUTES SECTION -->
   <section id="tributes" class="page-section">
     <div class="section-container">
       <h2>Leave a Tribute</h2>
+
+      <!-- Tribute Form -->
       <form id="tributeForm">
-        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="name" placeholder="Your Name" required>
         <textarea id="message" placeholder="Share a message..." required></textarea>
         <button type="submit">Submit</button>
       </form>
-      <div id="tributeList"></div>
+
+      <!-- Admin login prompt -->
+      <div id="adminLoginContainer">
+        <button id="adminLoginBtn">Admin Login</button>
+      </div>
+
+      <!-- Container for all tributes -->
+      <div id="userTributes">
+        <h3>Tributes from others</h3>
+        <div id="tributeList"></div>
+      </div>
     </div>
   </section>
 
@@ -82,7 +92,7 @@
     <p>© 2025 | Forever in our hearts</p>
   </footer>
 
-
- <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
-</html>s
+</html>
+
