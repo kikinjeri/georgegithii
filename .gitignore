@@ -1,2 +1,22 @@
+# Node dependencies
+node_modules/
+
+# Logs
+*.log
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Environment files
 .env
+
+# Gallery cache / temp images (if needed)
+galleryImages.json
+
+# VSCode workspace settings
+.vscode/
+
+# Optional: Ignore large uploads or other temp folders
+uploads/
+temp/

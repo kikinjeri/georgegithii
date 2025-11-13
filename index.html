@@ -18,19 +18,21 @@
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#bio">Biography</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#tributes">Tributes</a></li>
     </ul>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO SECTION --> 
   <section class="hero" id="hero">
     <div class="hero-container">
-      <img src="images/gallery/dad5.jpg" alt="George Githii smiling" class="hero-img">
+      <div id="profile-picture-container">
+        <img id="profile-picture" src="images/gallery/suit.jpg" alt="George Githii">
+      </div>
       <div class="hero-text">
         <h2>George Githii</h2>
         <p>"For God so loved the world he gave his only begotten son, that whosoever believes in him shall not perish, but have everlasting life."</p>
-        <p><strong>John 3:16</strong></p>
       </div>
     </div>
   </section>
@@ -41,7 +43,31 @@
       <h2>About</h2>
       <p>George Githii was a remarkable figure whose life and work inspired many. He was known for his values, dedication, and impact on the community.</p>
       <p>Celebrate his legacy and inspiring journey, and learn more about his contributions through the link below.</p>
-      <a href="#" target="_blank" class="about-link">Read the detailed story here</a>
+      <a href="https://www.msn.com/en-xl/news/other/glowing-tributes-for-former-editor-george-githii/ar-AA1Q51iw?ocid=BingNewsSerp" target="_blank">Read the MSN Tribute Article</a>
+    </div>
+  </section>
+
+  <!-- BIO SECTION -->
+  <section id="bio" class="page-section">
+    <div class="section-container">
+      <h2>Biography</h2>
+      <div class="bio-content">
+        <img src="images/gallery/george-githii-portrait.jpg" alt="George Githii" class="bio-photo" />
+        <div class="bio-text">
+          <p>
+            George Githii (circa 1936‑2025) was a distinguished Kenyan journalist and editor, renowned for his steadfast commitment to press freedom and fearless reporting.
+          </p>
+          <p>
+            Serving as Editor‑in‑Chief of prominent Kenyan newspapers during pivotal years, he became known for bold editorials that held governments to account.
+          </p>
+          <p>
+            His legacy lives on in the generations of journalists he inspired and in the independent media tradition he helped strengthen.
+          </p>
+          <p>
+            <em>Read more:</em> <a href="https://nation.africa/kenya/news/george-githii-editor-who-dared-challenge-the-state--5260632" target="_blank">George Githii: Editor who dared challenge the State</a>
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -67,32 +93,35 @@
   <section id="tributes" class="page-section">
     <div class="section-container">
       <h2>Leave a Tribute</h2>
-
-      <!-- Tribute Form -->
       <form id="tributeForm">
         <input type="text" id="name" placeholder="Your Name" required>
         <textarea id="message" placeholder="Share a message..." required></textarea>
         <button type="submit">Submit</button>
       </form>
 
-      <!-- Admin login prompt -->
       <div id="adminLoginContainer">
         <button id="adminLoginBtn">Admin Login</button>
       </div>
 
-      <!-- Container for all tributes -->
       <div id="userTributes">
         <h3>Tributes from others</h3>
-        <div id="tributeList"></div>
+        <div id="tributeList" class="tribute-list"></div>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 | Forever in our hearts</p>
   </footer>
 
+  <!-- MUSIC PROMPT AND AUDIO -->
+  <div id="musicPrompt" class="music-prompt">🎵 Click to play music</div>
+  <audio id="bgMusic" loop>
+    <source src="audio/amazing-grace.mp3" type="audio/mp3">
+  </audio>
+  <button id="musicToggle">🔊 Music</button>
+
   <script src="app.js"></script>
 </body>
 </html>
-
